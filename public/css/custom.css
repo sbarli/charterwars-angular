@@ -1,0 +1,46 @@
+.header {
+    width: 100%;
+}
+
+.page-text  {
+    padding: 30px 100px 60px 100px;
+    background-color: #e0e0e0;
+}
+
+.page-nav {
+    padding-right:50px;
+    margin-top:-30px;
+}
+
+.page-nav-icon {
+    max-height:100px;
+}
+
+.page-space {
+    height: 2000px;
+}
+
+.row {
+    margin:20px 0 0 0;
+}
+
+.placeholder-vid, .placeholder-question-sm {
+    height:250px;
+}
+
+.placeholder-vid {
+    border: 3px solid green;
+}
+
+.placeholder-vid:first-child {
+    margin-bottom: 20px;
+}
+
+.placeholder-question-sm {
+    border: 3px solid blue;
+}
+
+.placeholder-question-lg {
+    height: 520px;
+    border: 3px solid red;
+}

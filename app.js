@@ -26,8 +26,15 @@ app.use('/api', routes);
 
 
 
+// SERVER PORT LOCAL
+app.set('port', 3000);
 
-
-app.listen(process.env.PORT, process.env.IP, function(){
-  console.log("Server running...");
+app.listen(app.get('port'), function(){
+	// var port = server.address().port;
+	console.log("Server running on port " + app.get('port'));
 });
+
+// SERVER PORT CLOUD 9
+// app.listen(process.env.PORT, process.env.IP, function(){
+//   console.log("Server running on cloud 9");
+// });

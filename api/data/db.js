@@ -1,6 +1,11 @@
 var mongoose = require("mongoose");
-var ip = process.env.IP;
-var dburl = 'mongodb://'+ip+':27017/charterwars';
+// ~~~ CLOUD9 dburl ~~~
+// var ip = process.env.IP;
+// var dburl = 'mongodb://'+ip+':27017/charterwars';
+
+// ~~~ Local dburl ~~~
+var dburl = 'mongodb://localhost:27017/charterwars';
+
 
 mongoose.connect(dburl);
 

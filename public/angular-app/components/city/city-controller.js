@@ -20,7 +20,7 @@ function CityController($uibModal, $location, anchorSmoothScroll){
         );
     };
     
-    vm.openModal();
+    // vm.openModal();
     
     vm.goToVids = function (eID){
       $location.hash(eID);

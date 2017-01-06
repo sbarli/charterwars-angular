@@ -20,51 +20,80 @@
     </div>
     
     <div class="page-nav text-right col-xs-12">
-        <div ng-click="vm.goToVids('city-vids')"><img class="page-nav-icon" src="angular-app/assets/city-arrow-test.png"></img></div>
+        <div ng-click="vm.goToVids('city-vid-1')"><img class="page-nav-icon" src="angular-app/assets/city-arrow-test.png"></img></div>
     </div>
     
     <div class="page-space"></div>
     
-    <div id="city-vids" class="page-content container-fluid text-center">
-        <div id="city-vid-1" class="row page-video-row">
-            <div class="col-sm-12 page-video-col">
+    <div id="city-vid-1" class="container-fluid block text-center">
+        <div class="row block-header">
+            <div class="col-md-6 col-md-offset-3 block-col">
+                <h1 class="block-header-item">ZIPCODE</h1>
+                <p class="block-header-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in orci sit amet dolor sollicitudin scelerisque non eget nulla. Suspendisse id fringilla arcu.</p>
+            </div>
+            <!--<div class="col-md-2 col-md-offset-4 block-col">-->
+            <!--    <h1>ZIPCODE</h1>-->
+            <!--</div>-->
+            <!--<div class="col-md-2 block-col">-->
+            <!--    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in orci sit amet dolor sollicitudin scelerisque non eget nulla. Suspendisse id fringilla arcu.</p>-->
+            <!--</div>-->
+        </div>
+        <div class="row block-row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1 block-col">
                 <div class="placeholder-vid"></div>
             </div>
-        </div>
-        <div class="row page-question-row">
-            <div class="col-sm-12 page-question-col">
-                <div class="placeholder-question"></div>
+        </div>    
+        <div class="row block-row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1 block-col">
+                <div class="placeholder-question">
+                    <div class="row">
+                        <div class="col-md-3 col-md-offset-2 block-col">
+                            <h3 class="question-prompt">Q: How can a school system foster inequality?</h3>
+                        </div>
+                        <div class="col-md-5 block-col">
+                            <div class="question-response-box"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1 col-md-offset-9">
+                            <div class="question-btn">
+                                <button class="btn btn-sm btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+        <div class="row block-row">
             <div class="page-nav text-right col-xs-12">
                 <div ng-click="vm.goToVids('city-vid-2')"><img class="page-nav-icon" src="angular-app/assets/city-arrow-test.png"></img></div>
             </div>
         </div>
-        <div class="page-space"></div>
-        <div id="city-vid-2" class="row page-video-row">
-            <div class="col-sm-12 page-video-col">
-                <div class="placeholder-vid"></div>
-            </div>
-        </div>
-        <div class="row page-question-row">
-            <div class="col-sm-12 page-question-col">
-                <div class="placeholder-question"></div>
-            </div>
-            <div class="page-nav text-right col-xs-12">
-                <div ng-click="vm.goToVids('city-vid-3')"><img class="page-nav-icon" src="angular-app/assets/city-arrow-test.png"></img></div>
-            </div>
-        </div>
-        <div class="page-space"></div>
-        <div id="city-vid-3" class="row page-video-row">
-            <div class="col-sm-12 page-video-col">
-                <div class="placeholder-vid"></div>
-            </div>
-        </div>
-        <div class="row page-question-row">
-            <div class="col-sm-12 page-question-col">
-                <div class="placeholder-question"></div>
-            </div>
-        </div>
     </div>
+    
+    <!--<div id="city-vids" class="">-->
+    <!--    <div class="row block-row">-->
+            
+            
+    <!--    </div>-->
+    <!--    <div class="page-space"></div>-->
+    <!--    <div id="city-vid-2" class="row block-row">-->
+    <!--        <div class="col-xs-12 block-col">-->
+    <!--            <div class="placeholder-vid"></div>-->
+    <!--            <div class="placeholder-question"></div>-->
+    <!--        </div>-->
+    <!--        <div class="page-nav text-right col-xs-12">-->
+    <!--            <div ng-click="vm.goToVids('city-vid-3')"><img class="page-nav-icon" src="angular-app/assets/city-arrow-test.png"></img></div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <div class="page-space"></div>-->
+    <!--    <div id="city-vid-3" class="row block-row">-->
+    <!--        <div class="col-xs-12 block-col">-->
+    <!--            <div class="placeholder-vid"></div>-->
+    <!--            <div class="placeholder-question"></div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</div>-->
     
     <div>
         <a href="#!/home" class="btn btn-primary">Go Home</a>

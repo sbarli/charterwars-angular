@@ -1,6 +1,6 @@
 angular.module('charterwars').controller('DebateController', DebateController);
 
-function DebateController($uibModal){
+function DebateController($uibModal, $location, anchorSmoothScroll){
     var vm = this;
     
     vm.openModal = function(){
@@ -20,5 +20,10 @@ function DebateController($uibModal){
         );
     };
     
-    vm.openModal();
+    // vm.openModal();
+    
+    vm.goToVids = function (eID){
+      $location.hash(eID);
+      anchorSmoothScroll.scrollTo(eID);
+    };
 }

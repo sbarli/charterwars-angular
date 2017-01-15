@@ -12,8 +12,18 @@ function config($routeProvider, $httpProvider){
                 restricted: false
             }
         })
+        .when('/intro', {
+            templateUrl: 'angular-app/components/intro/intro.html', 
+            controller: IntroController,
+            controllerAs: 'vm',
+            access: {
+                restricted: false
+            }
+        })
         .when('/home', {
-            templateUrl: 'angular-app/components/main/main.html', 
+            templateUrl: 'angular-app/components/main/main.html',
+            controller: MainController,
+            controllerAs: 'vm',
             access: {
                 restricted: false
             }

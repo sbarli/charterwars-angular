@@ -21,94 +21,70 @@
     </div>
     
     <div class="page-nav text-right col-xs-12">
-        <div ng-click="vm.goToVids('debate-vid-1')"><img class="page-nav-icon" src="angular-app/assets/city-arrow-test.png"></img></div>
+        <div ng-click="vm.goToVids('first')"><img class="page-nav-icon" src="angular-app/assets/city-arrow-test.png"></img></div>
     </div>
     
     <div class="page-space"></div>
     
-    <div id="debate-vid-1" class="container-fluid block text-center">
-        <div class="row block-header">
-            <div class="col-xs-12 col-md-6 col-md-offset-3 block-col">
-                <h1 class="block-header-item">CHOICE</h1>
-                <p class="block-header-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in orci sit amet dolor sollicitudin scelerisque non eget nulla. Suspendisse id fringilla arcu.</p>
-            </div>
-        </div>
-        <div class="row block-row">
-            <div class="col-xs-12 col-md-10 col-md-offset-1 block-col">
-                <div class="placeholder-vid">
-                    <iframe src="https://player.vimeo.com/video/182436417" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <div ng-repeat="section in vm.sections track by $index">
+        <div id="debate-vid-{{ $index }}" class="container-fluid block text-center">
+            <div class="row block-header">
+                <div class="col-xs-12 text-center block-col">
+                    <h1 class="block-header-item">{{ section.title }}</h1>
                 </div>
             </div>
-        </div>    
-        <div class="row block-row">
-            <div class="col-xs-12 col-md-10 col-md-offset-1 block-col">
-                <div class="placeholder-question">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-8 col-md-offset-2 block-question">
-                            <h3 class="block-question-item question-prompt">Q: Are Charter Schools really a choice?</h3>
-                            <div class="block-question-item question-response-box"></div>
-                        </div>
+            <div class="row block-row">
+                <div class="col-xs-12 col-md-10 col-md-offset-1 block-col">
+                    <div class="placeholder-vid">
+                        <iframe ng-src="{{ section.url | trustedSrcFilter }}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-10 text-right">
-                            <div class="question-btn">
-                                <button class="btn btn-sm btn-primary">Submit</button>
+                </div>
+            </div>    
+            <div class="row block-row">
+                <div class="col-xs-12 col-md-10 col-md-offset-1 block-col">
+                    <div class="placeholder-question">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-8 col-md-offset-2 block-question">
+                                <h3 class="block-question-item question-prompt">Q: {{ section.question }}</h3>
+                                <div class="block-question-item">
+                                    <div ng-if="section.error" class="alert alert-danger" role="alert">
+                                        <p>{{ section.error }}</p>
+                                    </div>
+                                    <div ng-if="section.success" class="alert alert-success" role="alert">
+                                        <p>{{ section.success }}</p>
+                                    </div>
+                                    <form ng-if="!section.success" name="post" ng-submit="vm.post(section)">
+                                        <div class="form-group">
+                                            <textarea type="answer" class="form-control" id="answer" placeholder="[Response]" ng-model="section.answer" autocapitalize="none" required="true" maxlength="150" rows="3"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="name" class="form-control" id="name" placeholder="[Name]" ng-model="vm.name" autocapitalize="none" />
+                                        </div>
+                                        <div class="question-btn text-right">
+                                            <button type="submit" class="btn btn-sm btn-success">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
+                        <!--<div class="row">-->
+                        <!--    <div class="col-xs-12 col-md-10 text-right">-->
+                        <!--        <div class="question-btn">-->
+                        <!--            <button class="btn btn-sm btn-primary">Submit</button>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row block-row">
-            <div class="block-nav text-right col-xs-12">
-                <div ng-click="vm.goToVids('debate-vid-2')"><img class="block-nav-icon" src="angular-app/assets/city-arrow-test.png"></img></div>
+            <div class="row block-row" ng-if="!$last">
+                <div class="block-nav text-right col-xs-12">
+                    <div ng-click="vm.goToVids($index)"><img class="block-nav-icon" src="angular-app/assets/city-arrow-test.png"></img></div>
+                </div>
             </div>
         </div>
+        <div class="page-space" ng-if="!$last"></div>
     </div>
-    
-    <div class="page-space"></div>
-    
-    <div id="debate-vid-2" class="container-fluid block text-center">
-        <div class="row block-header">
-            <div class="col-xs-12 col-md-8 col-md-offset-2 block-col">
-                <h1 class="block-header-item">COMPETITION</h1>
-                <p class="block-header-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in orci sit amet dolor sollicitudin scelerisque non eget nulla. Suspendisse id fringilla arcu.</p>
-            </div>
-        </div>
-        <div class="row block-row">
-            <div class="col-xs-12 col-md-10 col-md-offset-1 block-col">
-                <div class="placeholder-vid">
-                    <iframe src="https://player.vimeo.com/video/182436415" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>    
-        <div class="row block-row">
-            <div class="col-xs-12 col-md-10 col-md-offset-1 block-col">
-                <div class="placeholder-question">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-8 col-md-offset-2 block-question">
-                            <h3 class="block-question-item question-prompt">Q: Is competition important in education?</h3>
-                            <div class="block-question-item question-response-box"></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-10 text-right">
-                            <div class="question-btn">
-                                <button class="btn btn-sm btn-primary">Submit</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row block-row">
-            <div class="block-nav text-right col-xs-12">
-                <div ng-click="vm.goToVids('debate-vid-3')"><img class="block-nav-icon" src="angular-app/assets/city-arrow-test.png"></img></div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="page-space"></div>
     
     
     <div class="container text-center">

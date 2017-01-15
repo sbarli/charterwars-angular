@@ -67,12 +67,8 @@ p.block-header-item {
     height: 500px;
 }
 
-.placeholder-question {
-    height:200px;
-}
-
 .block-question {
-    padding-top:30px;
+    padding-top:20px;
 }
 
 h3.block-question-item {
@@ -82,10 +78,6 @@ h3.block-question-item {
 .question-response-box {
     height:100px;
     background:white;
-}
-
-.question-btn {
-    padding:10px 7px;
 }
 
 .block-nav {

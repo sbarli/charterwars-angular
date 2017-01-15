@@ -1,10 +1,10 @@
 var mongoose = require("mongoose");
 // ~~~ CLOUD9 dburl ~~~
-// var ip = process.env.IP;
-// var dburl = 'mongodb://'+ip+':27017/charterwars';
+var ip = process.env.IP;
+var dburl = 'mongodb://'+ip+':27017/charterwars';
 
 // ~~~ Local dburl ~~~
-var dburl = 'mongodb://localhost:27017/charterwars';
+// var dburl = 'mongodb://localhost:27017/charterwars';
 
 
 mongoose.connect(dburl);
@@ -44,3 +44,4 @@ process.once('SIGUSR2', function(){
 
 // BRING IN SCHEMAS AND MODELS
 require("./users.model");
+require("./posts.model");

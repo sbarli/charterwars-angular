@@ -1,13 +1,13 @@
 var express     = require("express"),
     router      = express.Router(),
     ctrlPages  = require("../controllers/pages.controllers.js"),
-    ctrlComments  = require("../controllers/comments.controllers.js"),
+    ctrlPosts  = require("../controllers/posts.controllers.js"),
     ctrlUsers   = require("../controllers/users.controllers.js");
     
-// router
-//     .route('/hotels')
-//     .get(ctrlHotels.hotelsGetAll)
-//     .post(ctrlHotels.hotelsAddOne);
+router
+    .route('/posts')
+    .get(ctrlPosts.postsGetAll)
+    .post(ctrlPosts.postsPostOne);
     
 // router
 //     .route('/hotels/:hotelId')

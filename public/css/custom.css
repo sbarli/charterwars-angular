@@ -1,10 +1,4 @@
 @media screen and (max-width: 991px) {
-    .header {
-        width: 80%;
-        margin-left:auto; 
-        margin-right:auto;
-    }
-    
     .page-text  {
         padding: 120px 150px 120px 150px;
         background-color: #e0e0e0;
@@ -16,10 +10,6 @@
 }
 
 @media screen and (min-width: 992px) {
-    .header {
-        width: 100%;
-    }
-    
     .page-text  {
         padding: 30px 100px 60px 100px;
         background-color: #e0e0e0;
@@ -28,6 +18,10 @@
     .page-space {
         height: 1000px;
     }
+}
+
+.header {
+    width: 100%;
 }
 
 .page-nav {

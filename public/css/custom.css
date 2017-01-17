@@ -87,6 +87,18 @@ html, body, .ng-scope {
     margin:2px 10px;
 }
 
+.home-logo-group {
+    margin-bottom: 5%;
+}
+
+#city-logo img:hover {
+    background: url('../angular-app/assets/cw-pencil-logo-city-hover.png') no-repeat right top;
+}
+
+#debate-logo img:hover {
+    background: url('../angular-app/assets/cw-pencil-logo-debate-hover.png') no-repeat right top;
+}
+
 
 /* ====================== */
 /* Transition Video Pages */

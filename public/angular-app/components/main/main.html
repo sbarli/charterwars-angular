@@ -1,8 +1,31 @@
 <div id="home" class="page">
-    <div class="container text-center">
-        <h1>{{ vm.title }}</h1>
-        <a href="#!/city" class="btn btn-primary">The City</a>
-        <a href="#!/debate" class="btn btn-success">The Debate</a>
-        <button ng-click="vm.openModal()" class="btn btn-info">Rewatch Intro</button>
+    <div class="home-background"></div>
+    <div class="home-content container text-center">
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+                <div class="jumbotron">
+                    <h1>{{ vm.title }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1">
+                <div class="main-white">
+                    <h3 class="text-center">A note from the director:</h3>
+                    <p>
+                        Mauris sed egestas metus. Vivamus risus nulla, consectetur sit amet porta non, maximus quis ex. Quisque at consequat arcu. Praesent auctor nec ex et ullamcorper. In hac habitasse platea dictumst. Donec sit amet leo faucibus, tincidunt diam sit amet, tempus turpis. Cras consequat nulla ipsum, a ultricies eros consectetur nec. In non nisi vel neque pulvinar scelerisque. Nullam efficitur metus sit amet dolor dignissim consequat. Aliquam maximus maximus enim, eu tristique ante. Curabitur ultrices at ipsum vulputate finibus. Duis et consectetur eros. Suspendisse vestibulum sodales risus, id fringilla nisl. Morbi congue rhoncus mi et convallis. Curabitur dictum elit leo, sed consequat lacus varius ac.
+                    </p>
+                    <p>
+                        Nam bibendum vehicula turpis. Morbi ut imperdiet mi. Pellentesque vel dui non neque dignissim semper. Quisque consectetur cursus ex, non tristique lacus aliquet eget. Aliquam sed lacinia turpis. Maecenas in turpis convallis, lobortis tellus ut, pellentesque elit. Nam mollis, dolor vitae gravida efficitur, elit turpis ultricies ipsum, et vehicula justo dolor sed augue. Nam fringilla nisi sed ultricies feugiat. In hac habitasse platea dictumst. Etiam vestibulum sollicitudin ipsum ac posuere. Donec sagittis ante eget sem venenatis iaculis venenatis eu orci. Etiam eget libero vitae dui lobortis aliquam eget sed lectus. In ac orci interdum, pulvinar massa mollis, maximus enim.
+                    </p>
+                    <hr>
+                    <div class="home-btns">
+                        <a href="#!/city" class="btn btn-lg btn-primary">The City</a>
+                        <a href="#!/debate" class="btn btn-lg btn-success">The Debate</a>
+                        <button ng-click="vm.openModal()" class="btn btn-lg btn-info">Rewatch Intro</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

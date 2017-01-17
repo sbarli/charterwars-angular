@@ -1,0 +1,47 @@
+[
+    {
+        "name": "The Debate",
+        "videos": [
+            {
+                "title": "Choice",
+                "question": "Are charter schools really a choice?",
+                "url": "https://player.vimeo.com/video/182436417"
+            },  
+            {
+                "title": "Competition",
+                "question": "Is competition important in education?",
+                "url": "https://player.vimeo.com/video/182436415"
+            },  
+            {
+                "title": "Innovation",
+                "question": "Is innovation important in education?",
+                "url": "https://player.vimeo.com/video/182436415"
+            }
+        ]
+    },
+    {
+        "name": "The City",
+        "videos": [
+            {
+                "title": "Zipcode",
+                "question": "Does location affect the quality of education?",
+                "url": "https://player.vimeo.com/video/182436417"
+            },  
+            {
+                "title": "Parents",
+                "question": "How can a school system foster inequality?",
+                "url": "https://player.vimeo.com/video/182436415"
+            },  
+            {
+                "title": "Something Else",
+                "question": "Is this another question?",
+                "url": "https://player.vimeo.com/video/182436415"
+            },  
+            {
+                "title": "Video 4",
+                "question": "Couldn't think of a better title?",
+                "url": "https://player.vimeo.com/video/182436415"
+            }
+        ]
+    }
+]

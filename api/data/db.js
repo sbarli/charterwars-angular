@@ -45,3 +45,4 @@ process.once('SIGUSR2', function(){
 // BRING IN SCHEMAS AND MODELS
 require("./users.model");
 require("./posts.model");
+require("./pages.model");

@@ -9,7 +9,8 @@ function MainController($uibModal){
         var modalInstance = $uibModal.open({
             controller: IntroController,
             controllerAs: 'vm',
-            templateUrl: 'angular-app/components/intro/intro.html'
+            templateUrl: 'angular-app/components/intro/intro.html',
+            windowClass: 'home-intro-modal'
         });
         
         modalInstance.result.then(

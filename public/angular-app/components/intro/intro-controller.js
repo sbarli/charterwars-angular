@@ -4,9 +4,9 @@ function IntroController($location){
     var vm = this;
     
     if($location.$$url === '/intro'){
-        vm.showBtn = true;
+        vm.showContBtn = true;
     }else if ($location.$$url === '/home'){
-        vm.showBtn = false;
+        vm.showCloseBtn = true;
     }
     
     vm.title = 'Intro Video';

@@ -60,7 +60,7 @@ function config($routeProvider, $httpProvider){
         })
         .when('/forum', {
             templateUrl: 'angular-app/components/forum/forum.html', 
-            controller: ContentController,
+            controller: ForumController,
             controllerAs: 'vm',
             access: {
                 restricted: false

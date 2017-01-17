@@ -6,7 +6,7 @@ function config($routeProvider, $httpProvider){
     $routeProvider
         .when('/', {
             templateUrl: 'angular-app/components/cover/cover.html',
-            controller: ContentController,
+            controller: CoverController,
             controllerAs: 'vm',
             access: {
                 restricted: false

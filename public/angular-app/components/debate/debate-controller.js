@@ -3,6 +3,8 @@ angular.module('charterwars').controller('DebateController', DebateController);
 function DebateController($http, $uibModal, $location, anchorSmoothScroll){
     var vm = this;
     
+    vm.transitionTitle = 'Debate Transition Video';
+    
     vm.openModal = function(){
         var modalInstance = $uibModal.open({
             controller: DebateModalController,

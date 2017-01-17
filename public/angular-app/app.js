@@ -52,6 +52,8 @@ function config($routeProvider, $httpProvider){
         })
         .when('/debate/transition', {
             templateUrl: 'angular-app/components/debate/debate-transition.html', 
+            controller: DebateController,
+            controllerAs: 'vm',
             access: {
                 restricted: false
             }

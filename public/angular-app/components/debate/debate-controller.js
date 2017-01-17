@@ -77,7 +77,7 @@ function DebateController($http, $uibModal, $location, anchorSmoothScroll){
             "question": "Is innovation important in education?",
             "url": "https://player.vimeo.com/video/182436415",
             "id": 3
-        },    
+        } 
     ];
     
 }

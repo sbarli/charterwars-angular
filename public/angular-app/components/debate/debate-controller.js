@@ -1,28 +1,14 @@
 angular.module('charterwars').controller('DebateController', DebateController);
 
-function DebateController($http, $uibModal, $location, anchorSmoothScroll){
+function DebateController($location, anchorSmoothScroll, pageDataFactory, $filter, $route){
     var vm = this;
     
-    vm.transitionTitle = 'Debate Transition Video';
-    
-    vm.openModal = function(){
-        var modalInstance = $uibModal.open({
-            controller: DebateModalController,
-            controllerAs: 'vm',
-            templateUrl: 'angular-app/components/debate/debate-modal.html'
-        });
-        
-        modalInstance.result.then(
-            function handleResolve(response){
-                console.log('modal closed');
-            },
-            function handleReject(err){
-                console.log('error: ', err);
-            }
-        );
-    };
-    
-    // vm.openModal();
+    pageDataFactory.pageList().then(function(response){
+        var pages = response.data;
+        console.log('pages', pages);
+        vm.debatePage = ($filter('filter')(pages, {"name":"The Debate"}))[0];
+        console.log('debatePage', vm.debatePage);
+    });
     
     vm.goToVids = function (index){
         var next_idx;
@@ -37,47 +23,27 @@ function DebateController($http, $uibModal, $location, anchorSmoothScroll){
     };
     
     vm.post = function(section){
-        var post = {
+        var pageId = vm.debatePage._id;
+        var sectionId = section._id;
+        var responseData = {
             name: vm.name,
-            answer: section.answer,
-            question: section.id
+            answer: section.answer
         };
         
-        console.log('post', post);
+        console.log('responseData', responseData);
         
         if(!section.answer){
             section.error = 'Please add an answer!';
         }else{
-            $http.post('/api/posts', post).then(function(result){
-                console.log(result);
-                section.success = 'Successful post!';
-                section.error = null;
+            pageDataFactory.postResponse(pageId, sectionId, responseData).then(function(response){
+                console.log(response.status);
+                if(response.status === 201){
+                    $route.reload();
+                }
             }).catch(function(err){
                 console.log(err);
-                section.error = 'There was an error. Please try again.';
             });
         }
     };
-    
-    vm.sections = [
-        {
-            "title": "Choice",
-            "question": "Are charter schools really a choice?",
-            "url": "https://player.vimeo.com/video/182436417",
-            "id": 1
-        },  
-        {
-            "title": "Competition",
-            "question": "Is competition important in education?",
-            "url": "https://player.vimeo.com/video/182436415",
-            "id": 2
-        },  
-        {
-            "title": "Innovation",
-            "question": "Is innovation important in education?",
-            "url": "https://player.vimeo.com/video/182436415",
-            "id": 3
-        } 
-    ];
     
 }

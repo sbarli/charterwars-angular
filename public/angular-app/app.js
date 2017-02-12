@@ -36,22 +36,8 @@ function config($routeProvider, $httpProvider){
                 restricted: false
             }
         })
-        .when('/city/transition', {
-            templateUrl: 'angular-app/components/city/city-transition.html', 
-            access: {
-                restricted: false
-            }
-        })
         .when('/debate', {
             templateUrl: 'angular-app/components/debate/debate.html', 
-            controller: DebateController,
-            controllerAs: 'vm',
-            access: {
-                restricted: false
-            }
-        })
-        .when('/debate/transition', {
-            templateUrl: 'angular-app/components/debate/debate-transition.html', 
             controller: DebateController,
             controllerAs: 'vm',
             access: {

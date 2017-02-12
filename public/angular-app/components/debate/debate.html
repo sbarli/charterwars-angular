@@ -26,26 +26,19 @@
     
     <div class="page-space"></div>
     
-    <div ng-repeat="section in vm.sections track by $index">
+    <div ng-repeat="section in vm.debatePage.sections track by $index">
         <div id="debate-vid-{{ $index }}" class="container-fluid block text-center">
             <div class="row block-header">
                 <div class="col-xs-12 text-center block-col">
-                    <h1 class="block-header-item">{{ section.title }}</h1>
+                    <h1 class="block-header-item">{{ section.name | uppercase }}</h1>
                 </div>
             </div>
-            <div class="row block-row">
-                <div class="col-xs-12 col-md-10 col-md-offset-1 block-col">
-                    <div class="placeholder-vid">
-                        <iframe ng-src="{{ section.url | trustedSrcFilter }}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>    
             <div class="row block-row">
                 <div class="col-xs-12 col-md-10 col-md-offset-1 block-col">
                     <div class="placeholder-question">
                         <div class="row">
                             <div class="col-xs-12 col-md-8 col-md-offset-2 block-question">
-                                <h3 class="block-question-item question-prompt">Q: {{ section.question }}</h3>
+                                <h3 class="block-question-item question-prompt">Q: {{ section.prompt.question }}</h3>
                                 <div class="block-question-item">
                                     <div ng-if="section.error" class="alert alert-danger" role="alert">
                                         <p>{{ section.error }}</p>
@@ -67,16 +60,16 @@
                                 </div>
                             </div>
                         </div>
-                        <!--<div class="row">-->
-                        <!--    <div class="col-xs-12 col-md-10 text-right">-->
-                        <!--        <div class="question-btn">-->
-                        <!--            <button class="btn btn-sm btn-primary">Submit</button>-->
-                        <!--        </div>-->
-                        <!--    </div>-->
-                        <!--</div>-->
                     </div>
                 </div>
             </div>
+            <div class="row block-row">
+                <div class="col-xs-12 col-md-10 col-md-offset-1 block-col">
+                    <div class="placeholder-vid">
+                        <iframe ng-src="{{ section.url | trustedSrcFilter }}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>    
             <div class="row block-row" ng-if="!$last">
                 <div class="block-nav text-right col-xs-12">
                     <div ng-click="vm.goToVids($index)"><img class="block-nav-icon" src="angular-app/assets/city-arrow-test.png"></img></div>

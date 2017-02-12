@@ -25,7 +25,6 @@ app.use(bodyParser.json());
 app.use('/api', routes);
 
 
-
 // SERVER PORT LOCAL
 // app.set('port', 3000);
 

@@ -10,6 +10,13 @@ html, body, .ng-scope {
     background: white;
     padding:20px;
 }
+
+.btn-xl {
+    padding: 15px 25px;
+    font-size: 28px;
+    line-height: 1.6;
+    border-radius: 10px;
+}
 /* ~~~~~~~~~ */
 
 
@@ -52,7 +59,7 @@ html, body, .ng-scope {
 
 #cover .jumbotron {
     color: white;
-    background:#7F7F7F;
+    background:transparent;
     margin-top:10%;
 }
 

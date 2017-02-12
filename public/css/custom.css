@@ -17,6 +17,18 @@ html, body, .ng-scope {
     line-height: 1.6;
     border-radius: 10px;
 }
+
+.btn-secondary {
+    color: #292b2c;
+    background-color: #fff;
+    border-color: #292b2c;
+}
+
+.btn-secondary:hover {
+    color: #292b2c;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
 /* ~~~~~~~~~ */
 
 

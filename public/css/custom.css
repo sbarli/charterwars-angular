@@ -76,6 +76,41 @@ html, body, .ng-scope {
 }
 
 
+/* ====== */
+/* Navbar */
+/* ====== */
+#nav {
+    width: 100px;
+}
+
+.navbar {
+    border:none;
+    background-color: transparent;
+}
+
+.navbar .navbar-header {
+  float: none;
+}
+.navbar .navbar-toggle {
+  display: block;
+}
+.navbar .navbar-collapse.collapse {
+  display: none!important;
+}
+.navbar .navbar-nav {
+  float: none!important;
+}
+.navbar .navbar-nav > li {
+  float: none;
+}
+.navbar .navbar-collapse.collapse.in {
+  display: block !important;
+}
+
+.navbar-inverse .navbar-toggle {
+    background-color: #333;
+}
+
 /* ========= */
 /* Home Page */
 /* ========= */
@@ -108,6 +143,10 @@ html, body, .ng-scope {
 
 .home-logo-group {
     margin-bottom: 5%;
+}
+
+#dir-note {
+    margin: 5% auto;
 }
 
 #city-logo img:hover {

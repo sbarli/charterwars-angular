@@ -1,47 +1,68 @@
 [
-    {
-        "name": "The Debate",
-        "videos": [
-            {
-                "title": "Choice",
-                "question": "Are charter schools really a choice?",
-                "url": "https://player.vimeo.com/video/182436417"
-            },  
-            {
-                "title": "Competition",
-                "question": "Is competition important in education?",
-                "url": "https://player.vimeo.com/video/182436415"
-            },  
-            {
-                "title": "Innovation",
-                "question": "Is innovation important in education?",
-                "url": "https://player.vimeo.com/video/182436415"
-            }
-        ]
-    },
-    {
-        "name": "The City",
-        "videos": [
-            {
-                "title": "Zipcode",
-                "question": "Does location affect the quality of education?",
-                "url": "https://player.vimeo.com/video/182436417"
-            },  
-            {
-                "title": "Parents",
-                "question": "How can a school system foster inequality?",
-                "url": "https://player.vimeo.com/video/182436415"
-            },  
-            {
-                "title": "Something Else",
-                "question": "Is this another question?",
-                "url": "https://player.vimeo.com/video/182436415"
-            },  
-            {
-                "title": "Video 4",
-                "question": "Couldn't think of a better title?",
-                "url": "https://player.vimeo.com/video/182436415"
-            }
-        ]
-    }
+	{
+		"name" : "The City",
+		"sections" : [
+			{
+				"name" : "Zipcode",
+				"url" : "https://player.vimeo.com/video/191718784",
+				"prompt" : {
+					"question" : "What is the reputation of your neighborhood? Do you fit that stereotype?",
+					"responses" : []
+				}
+			},
+			{
+				"name" : "Parents",
+				"url" : "https://player.vimeo.com/video/191719167",
+				"prompt" : {
+					"question" : "How should schools engage with the community?",
+					"responses" : []
+				}
+			},
+			{
+				"name" : "Kendra",
+				"url" : "https://player.vimeo.com/video/191718985",
+				"prompt" : {
+					"question" : "The school-to-prison pipeline is:",
+					"responses" : []
+				}
+			},
+			{
+				"name" : "Prison",
+				"url" : "https://player.vimeo.com/video/191719368",
+				"prompt" : {
+					"question" : "What is the purpose of a social safety net?",
+					"responses" : []
+				}
+			}
+		]
+	},
+	{
+		"name" : "The Debate",
+		"sections" : [
+			{
+				"name" : "Choice",
+				"url" : "https://player.vimeo.com/video/191719505",
+				"prompt" : {
+					"question" : "What is educational privilege? Who has educational privilege?",
+					"responses" : []
+				}
+			},
+			{
+				"name" : "Competition",
+				"url" : "https://player.vimeo.com/video/191719718",
+				"prompt" : {
+					"question" : "Should schools be run like a business? Why?",
+					"responses" : []
+				}
+			},
+			{
+				"name" : "Innovation",
+				"url" : "https://player.vimeo.com/video/191719939",
+				"prompt" : {
+					"question" : "How can a school foster innovation?",
+					"responses" : []
+				}
+			}
+		]
+	}
 ]

@@ -1,42 +1,152 @@
 var mongoose = require("mongoose");
+var Page = mongoose.model('Page');
 var Post = mongoose.model('Post');
 
 module.exports.postsGetAll = function(req, res) {
+    var pageId = req.params.pageId;
+    var sectionId = req.params.sectionId;
     
-    res
-        .status(200)
-        .json({ "message":"You made it to postsGetAll!" });
-
-};
-
-module.exports.postsPostOne = function(req, res){
-    
-    if(!req.body.name){
-        req.body.name = 'Anonymous';
-    }
-    
-    var newPost = {
-        name : req.body.name,
-        answer : req.body.answer,
-        question : req.body.question
-    };
-    
-    console.log('newPost', newPost);
-    
-    Post
-        .create(newPost, function(err, post){
+    Page
+        .findById(pageId)
+        .select('sections')
+        .exec(function(pageErr, page){
             var response = {
-                status : 201,
-                message : {}
+                status : 200,
+                message : []
             };
-            if(err){
+            if(pageErr){
+                console.log('error');
                 response.status = 500;
-                response.message = err;
+                response.message = pageErr;
+            } else if(!page){
+                console.log('Page not found');
+                response.status = 404;
+                response.message = {
+                    "message" : "Could not find page id: " + pageId
+                };
+            } else if(page.sections.length < 1){
+                console.log('No sections found');
+                response.status = 404;
+                response.message = {
+                    "message" : "No sections found"
+                };
             } else {
-                response.message = post;
+                var section = page.sections.id(sectionId);
+                
+                if(section){
+                    if(section.prompt.responses.length < 1){
+                        console.log('No responses found');
+                        response.status = 404;
+                        response.message = {
+                            "message" : "No responses found"
+                        };
+                    }else{
+                        response.message = section.prompt.responses;
+                    }
+                }else{
+                    console.log('Section not found');
+                    response.status = 404;
+                    response.message = {
+                        "message" : "Could not find section id: " + sectionId
+                    };
+                }
             }
             res
                 .status(response.status)
                 .json(response.message);
+        });
+
+};
+
+var _addPost = function(req, res, page, section){
+    var newResponse = {
+        name: req.body.name,
+        answer: req.body.answer
+    };
+    
+    console.log('newResponse', newResponse);
+    
+    Post
+        .create(newResponse, function(err, response){
+            if(err){
+                console.log('error');
+                res
+                    .status(500)
+                    .json(err);
+            }else{
+                console.log('Created Post!', response);
+                section.prompt.responses.push(response);
+                console.log('Pushed response to section', section);
+                page.save(function(err, updatedPage){
+                    var response = {
+                        status : 201,
+                        message : {}
+                    };
+                    if(err){
+                        console.log('error');
+                        response.status = 500;
+                        response.message = err;
+                    } else {
+                        console.log("New Response Added!");
+                        var updatedSection = updatedPage.sections.id(section.id);
+                        response.message = updatedSection.prompt.responses[updatedSection.prompt.responses.length - 1];
+                    }
+                    res
+                        .status(response.status)
+                        .json(response.message);
+                    
+                });
+            }
+        });
+    
+    
+    
+};
+
+module.exports.postsPostOne = function(req, res){
+    
+    var pageId = req.params.pageId;
+    var sectionId = req.params.sectionId;
+    
+    Page
+        .findById(pageId)
+        .select('sections')
+        .exec(function(pageErr, page){
+            var response = {
+                status : 200,
+                message : []
+            };
+            if(pageErr){
+                console.log('error');
+                response.status = 500;
+                response.message = pageErr;
+            } else if(!page){
+                console.log('Page not found');
+                response.status = 404;
+                response.message = {
+                    "message" : "Could not find page id: " + pageId
+                };
+            } else if(page.sections.length < 1){
+                console.log('No sections found');
+                response.status = 404;
+                response.message = {
+                    "message" : "No sections found"
+                };
+            } else {
+                var section = page.sections.id(sectionId);
+                
+                if(section){
+                    _addPost(req,res,page,section);
+                }else{
+                    console.log('Section not found');
+                    response.status = 404;
+                    response.message = {
+                        "message" : "Could not find section id: " + sectionId
+                    };
+                    res
+                        .status(response.status)
+                        .json(response.message);
+                }
+            }
         });
 };

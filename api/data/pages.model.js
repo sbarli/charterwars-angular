@@ -1,17 +1,25 @@
 var mongoose = require("mongoose");
 
-var videoSchema = new mongoose.Schema({
-    title: {
-        type: String,
-        required: true
-    },
-    question: {
+var sectionSchema = new mongoose.Schema({
+    name: {
         type: String,
         required: true
     },
     url: {
         type: String,
         required: true
+    },
+    prompt: {
+        question: {
+            type: String,
+            required: true
+        },
+        responses: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "Post"
+            }
+        ]
     }
 });
 
@@ -20,7 +28,7 @@ var pageSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    videos: [videoSchema]
+    sections: [sectionSchema]
 });
     
 

@@ -139,12 +139,6 @@ html, body, .ng-scope {
     position: relative;
 }
 
-#home .jumbotron {
-    background: white;
-    padding: 5px 0 35px 0;
-    margin: 5% 0;
-}
-
 #home .main-white h3 {
     margin-top:0;
 }
@@ -159,6 +153,12 @@ html, body, .ng-scope {
 
 #dir-note {
     margin: 5% auto;
+    font-family: 'Courier New';
+}
+
+#dir-note:hover {
+    box-shadow: inset 0 0 30px darkgrey;
+    border: 1px solid darkgray;
 }
 
 #city-logo img:hover {

@@ -21,7 +21,7 @@ function config($routeProvider, $httpProvider){
             }
         })
         .when('/home', {
-            templateUrl: 'angular-app/components/main/main.html',
+            templateUrl: 'angular-app/components/home/home.html',
             controller: MainController,
             controllerAs: 'vm',
             access: {

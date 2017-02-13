@@ -1,8 +1,9 @@
 angular.module('charterwars').controller('MainController', MainController);
 
-function MainController($uibModal){
-    var vm = this;
+function MainController($uibModal, $scope){
+    $scope.showNavigation(true);
     
+    var vm = this;
     vm.title = 'Home Page';
     
     vm.openModal = function(){

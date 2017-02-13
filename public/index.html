@@ -7,17 +7,21 @@
     <link rel="stylesheet" href="css/custom.css" type="text/css" />
 </head>
 <body>
-    <cw-navigation></cw-navigation>
-    
-    <div ng-view></div>
-    
-    <footer class="footer text-center">
-        <div class="container">
-            <p class="text-muted">
-                <small>&copy; CharterWars</small>
-            </p>
+    <div ng-controller="AppController">
+        <div class="cw-navigation" ng-show="navigation">
+            <cw-navigation></cw-navigation>
         </div>
-    </footer>
+    
+        <div ng-view></div>
+    
+        <footer class="footer text-center">
+            <div class="container">
+                <p class="text-muted">
+                    <small>&copy; CharterWars</small>
+                </p>
+            </div>
+        </footer>
+    </div>
     
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -27,10 +31,10 @@
     <script type="text/javascript" src="node_modules/angular-jwt/dist/angular-jwt.js"></script>
     <script type="text/javascript" src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
     <script type="text/javascript" src="angular-app/app.js"></script>
-    <script type="text/javascript" src="angular-app/shared/content/content-controller.js"></script>
+    <script type="text/javascript" src="angular-app/shared/main/app-controller.js"></script>
     <script type="text/javascript" src="angular-app/components/cover/cover-controller.js"></script>
     <script type="text/javascript" src="angular-app/components/intro/intro-controller.js"></script>
-    <script type="text/javascript" src="angular-app/components/main/main-controller.js"></script>
+    <script type="text/javascript" src="angular-app/components/home/home-controller.js"></script>
     <script type="text/javascript" src="angular-app/components/city/city-controller.js"></script>
     <script type="text/javascript" src="angular-app/components/debate/debate-controller.js"></script>
     <script type="text/javascript" src="angular-app/components/forum/forum-controller.js"></script>

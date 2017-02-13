@@ -1,6 +1,8 @@
 angular.module('charterwars').controller('DebateController', DebateController);
 
-function DebateController($location, anchorSmoothScroll, pageDataFactory, $filter, $route){
+function DebateController($location, anchorSmoothScroll, pageDataFactory, $filter, $route, $scope){
+    $scope.showNavigation(true);
+    
     var vm = this;
     
     pageDataFactory.pageList().then(function(response){

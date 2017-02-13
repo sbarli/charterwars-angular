@@ -205,6 +205,7 @@ html, body, .ng-scope {
 /* ============= */
 .header {
     width: 100%;
+    max-height: 300px;
 }
 
 .page-nav {
@@ -216,6 +217,10 @@ html, body, .ng-scope {
     max-height:100px;
 }
 
+.section {
+    height: 2000px;
+}
+
 .block {
     background:#464389;
 }
@@ -224,43 +229,16 @@ html, body, .ng-scope {
     margin: 25px auto;
 }
 
+.block-question {
+    margin-bottom: 30px;
+}
+
 .block-header-item, .block-question-item {
-    display: inline-block;
-    vertical-align: middle;
-    width: 49%;
-    margin:0;
     color: white;
 }
 
-h1.block-header-item {
-    letter-spacing: 3px;
-    font-weight: bold;
-}
-
-p.block-header-item {
-    text-align: left;
-}
-
-.placeholder-vid, .placeholder-question {
-    background:#6863B2;
-    margin: 25px auto;
-}
-
-.placeholder-vid {
-    height: 500px;
-}
-
-.block-question {
-    padding-top:20px;
-}
-
-h3.block-question-item {
-    padding-right: 50px;
-}
-
-.question-response-box {
-    height:100px;
-    background:white;
+.block-video {
+    height:500px;
 }
 
 .block-nav {
@@ -271,5 +249,26 @@ h3.block-question-item {
 .block-nav-icon {
     max-height:100px;
 }
+
+.block-nav-placeholder {
+    height:50px;
+}
+
+/*h1.block-header-item {*/
+/*    letter-spacing: 3px;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*p.block-header-item {*/
+/*    text-align: left;*/
+/*}*/
+
+/*.block-question {*/
+/*    padding-top:20px;*/
+/*}*/
+
+/*h3.block-question-item {*/
+/*    padding-right: 50px;*/
+/*}*/
 
 /* ~~~~~~~~~~~~~~ */

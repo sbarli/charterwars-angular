@@ -1,13 +1,5 @@
 var mongoose = require("mongoose");
-
-// var dburl = 'mongodb://samantha:psych-preclude-sobriety-farrow@ds153659.mlab.com:53659/charterwars';
-
-console.log(process.env.DATABASEURL);
-var dburl = process.env.DATABASEURL;
-
-// ~~~ Local dburl ~~~
-// var dburl = 'mongodb://localhost:27017/charterwars';
-
+var dburl = process.env.DATABASEURL || 'mongodb://localhost:27017/charterwars';
 
 mongoose.connect(dburl);
 

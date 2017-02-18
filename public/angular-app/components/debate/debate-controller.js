@@ -10,9 +10,7 @@ function DebateController($location, anchorSmoothScroll, pageDataFactory, $filte
     
     pageDataFactory.pageList().then(function(response){
         var pages = response.data;
-        console.log('pages', pages);
         vm.debatePage = ($filter('filter')(pages, {"name":"The Debate"}))[0];
-        console.log('debatePage', vm.debatePage);
     });
     
     vm.goToVids = function (index){
@@ -23,12 +21,10 @@ function DebateController($location, anchorSmoothScroll, pageDataFactory, $filte
             next_idx = index + 1;
         }
         var eID = 'debate-vid-' + next_idx;
-        $location.hash(eID);
         anchorSmoothScroll.scrollTo(eID);
     };
     
     vm.backToTop = function (eID){
-        $location.hash(eID);
         anchorSmoothScroll.scrollTo(eID);
     };
     
@@ -48,7 +44,7 @@ function DebateController($location, anchorSmoothScroll, pageDataFactory, $filte
             pageDataFactory.postResponse(pageId, sectionId, responseData).then(function(response){
                 console.log(response.status);
                 if(response.status === 201){
-                    $route.reload();
+                    section.responded = true;
                 }
             }).catch(function(err){
                 console.log(err);

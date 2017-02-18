@@ -1,7 +1,8 @@
 var mongoose = require("mongoose");
 // ~~~ CLOUD9 dburl ~~~
-var ip = process.env.IP;
-var dburl = 'mongodb://'+ip+':27017/charterwars';
+// var ip = process.env.IP;
+// var dburl = 'mongodb://'+ip+':27017/charterwars';
+var dburl = 'mongodb://samantha:psych-preclude-sobriety-farrow@ds153659.mlab.com:53659/charterwars';
 
 // ~~~ Local dburl ~~~
 // var dburl = 'mongodb://localhost:27017/charterwars';

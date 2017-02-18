@@ -1,6 +1,7 @@
 angular.module('charterwars').controller('IntroController', IntroController);
 
-function IntroController($location){
+function IntroController($location, $scope){
+    $scope.showNavigation(false);
     var vm = this;
     
     if($location.$$url === '/intro'){

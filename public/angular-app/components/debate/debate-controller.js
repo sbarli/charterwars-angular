@@ -1,6 +1,6 @@
 angular.module('charterwars').controller('DebateController', DebateController);
 
-function DebateController($location, anchorSmoothScroll, pageDataFactory, $filter, $route, $scope){
+function DebateController($location, anchorSmoothScroll, pageDataFactory, $filter, $route, $scope, pageSectionColorService){
     $scope.showNavigation(true);
     
     var vm = this;
@@ -8,9 +8,14 @@ function DebateController($location, anchorSmoothScroll, pageDataFactory, $filte
     vm.pageDwnArrow = 'angular-app/assets/content-nav/debate-down-outline.png';
     vm.pageUpArrow = 'angular-app/assets/content-nav/debate-up-outline.png';
     
+    vm.colors = pageSectionColorService.getIndexColors();
+    
     pageDataFactory.pageList().then(function(response){
         var pages = response.data;
         vm.debatePage = ($filter('filter')(pages, {"name":"The Debate"}))[0];
+        angular.forEach(vm.debatePage.sections, function(section, i){
+            section.background = vm.colors[i];
+        });
     });
     
     vm.goToVids = function (index){

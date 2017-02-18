@@ -26,7 +26,8 @@
     <div class="page-space"></div>
     
     <div ng-repeat="section in vm.debatePage.sections track by $index" ng-class="{'section':!$last}">
-        <div id="debate-vid-{{ $index }}" class="container-fluid block text-center">
+        <div id="debate-vid-{{ $index }}" class="container-fluid block text-center"
+            ng-style="{'background':section.background}">
             <div class="row block-header">
                 <div class="col-xs-12 text-center">
                     <h1 class="block-header-item">{{ section.name | uppercase }}</h1>

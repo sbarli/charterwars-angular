@@ -1,7 +1,6 @@
 <div id="debate" class="page">
-    <img class="header" src="angular-app/assets/debate-header.png"></img>
+    <img class="header" src="angular-app/assets/headers/debate-header.png"></img>
     
-    <!-- UDPATE THIS TO ROW & COLS (xs-12, md-4) -->
     <div class="page-text col-xs-12">
         <p class="text-left">
             <em>The charter school movement, at its core, is motivated by the<br>
@@ -21,7 +20,7 @@
     </div>
     
     <div class="page-nav text-right col-xs-12">
-        <div ng-click="vm.goToVids('first')"><img class="page-nav-icon" src="angular-app/assets/city-arrow-test.png"></img></div>
+        <div ng-click="vm.goToVids('first')"><img class="page-nav-icon" ng-src="{{ vm.pageDwnArrow }}"></img></div>
     </div>
     
     <div class="page-space"></div>
@@ -70,12 +69,21 @@
             </div>    
             <div class="row" ng-if="!$last">
                 <div class="block-nav text-right col-xs-12">
-                    <div ng-click="vm.goToVids($index)"><img class="block-nav-icon" src="angular-app/assets/city-arrow-test.png"></img></div>
+                    <img class="block-nav-down" 
+                        ng-src="{{ vm.pageDwnArrow }}"
+                        ng-click="vm.goToVids($index)">
+                    </img>
+                </div>
+            </div>   
+            <div class="row" ng-if="$last">
+                <div class="block-nav text-right col-xs-12">
+                    <img class="block-nav-up" 
+                        ng-src="{{ vm.pageUpArrow }}"
+                        ng-click="vm.backToTop('debate')">
+                    </img>
                 </div>
             </div>
-            <div ng-if="$last" class="row block-nav-placeholder"></div>
         </div>
-        <!--<div class="page-space" ng-if="!$last"></div>-->
     </div>
     
     <div class="container text-center">

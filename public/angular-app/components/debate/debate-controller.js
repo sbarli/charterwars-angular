@@ -5,6 +5,9 @@ function DebateController($location, anchorSmoothScroll, pageDataFactory, $filte
     
     var vm = this;
     
+    vm.pageDwnArrow = 'angular-app/assets/content-nav/debate-down-outline.png';
+    vm.pageUpArrow = 'angular-app/assets/content-nav/debate-up-outline.png';
+    
     pageDataFactory.pageList().then(function(response){
         var pages = response.data;
         console.log('pages', pages);
@@ -20,6 +23,11 @@ function DebateController($location, anchorSmoothScroll, pageDataFactory, $filte
             next_idx = index + 1;
         }
         var eID = 'debate-vid-' + next_idx;
+        $location.hash(eID);
+        anchorSmoothScroll.scrollTo(eID);
+    };
+    
+    vm.backToTop = function (eID){
         $location.hash(eID);
         anchorSmoothScroll.scrollTo(eID);
     };

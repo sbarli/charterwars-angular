@@ -3,52 +3,69 @@
     <div class="home-content container">
         <div class="row">
             <div class="col-xs-12 col-md-8 col-md-offset-2">
-                <div id="dir-note" class="main-white">
-                    <h3 class="text-center">A note from the director:</h3>
-                    <p>
-                        You probably don’t need any convincing that school, or more specifically – public school, is vitally important to millions of families, to thousands of neighborhoods, to our society.
-                    </p>
-                    <p>
-                        And you’re probably already aware that our current education system is unequal, that the quality of a child’s education is directly correlated to how much money their family has.
-                    </p>
-                    <p>
-                        And it’s probably no surprise that Black and Hispanic students are disproportionately more likely to attend a low performing school than White students, even when controlling for family income [CITE].
-                    </p>
-                    <p>
-                        But what happens when these ruthless, unfair truths are overshadowed by a sexier issue? 
-                    </p>
-                    <p>
-                        The real Charter School Debate (“the Debate”) is a combusting crucible of heavy topics: public goods and private enterprise, systemic racism and white saviors, efficiency and scarcity, empowerment and control… 
-                    </p>
-                    <p>
-                        But too often the Debate is depicted as a battle between good and evil, the righteous and the self-interested. 
-                    </p>
-                    <p>
-                        Charter Wars is a series of short films and interactive questions that whittles away at this false binary. Charter Wars is not about advocating for one policy over another, it’s about understanding the ideologies and experiences that shaped those policies. 
-                    </p>
-                    <p>
-                        So watch, reflect, and then debate.
-                    </p>
-                    <hr>
-                    <div class="text-center home-btns">
-                        <button ng-click="vm.openModal()" class="btn btn-sm btn-secondary">Rewatch Intro</button>
+                <div class="main-white home-text">
+                    <div id="dir-note"
+                        ng-class="{'closed':!vm.homeText, 'open':vm.homeText}">
+                        <h3 class="text-center">A note from the director:</h3>
+                        <p>
+                            You probably don’t need any convincing that school, or more specifically – public school, is vitally important to millions of families, to thousands of neighborhoods, to our society.
+                        </p>
+                        <p>
+                            And you’re probably already aware that our current education system is unequal, that the quality of a child’s education is directly correlated to how much money their family has.
+                        </p>
+                        <p>
+                            And it’s probably no surprise that Black and Hispanic students are disproportionately more likely to attend a low performing school than White students, even when controlling for family income [CITE].
+                        </p>
+                        <p>
+                            But what happens when these ruthless, unfair truths are overshadowed by a sexier issue? 
+                        </p>
+                        <p>
+                            The real Charter School Debate (“the Debate”) is a combusting crucible of heavy topics: public goods and private enterprise, systemic racism and white saviors, efficiency and scarcity, empowerment and control… 
+                        </p>
+                        <p>
+                            But too often the Debate is depicted as a battle between good and evil, the righteous and the self-interested. 
+                        </p>
+                        <p>
+                            Charter Wars is a series of short films and interactive questions that whittles away at this false binary. Charter Wars is not about advocating for one policy over another, it’s about understanding the ideologies and experiences that shaped those policies. 
+                        </p>
+                        <p>
+                            So watch, reflect, and then debate.
+                        </p>
+                        <hr>
+                        <div class="text-center home-btns">
+                            <button ng-click="vm.openModal()" class="btn btn-sm btn-secondary">Rewatch Intro</button>
+                        </div>
                     </div>
+                </div>
+                <div id="expand-home-text" class="text-right">
+                    <i class="fa fa-2x"
+                        ng-class="{'fa-plus-square':!vm.homeText,'fa-minus-square':vm.homeText}"
+                        ng-click="vm.homeText=!vm.homeText">
+                    </i>
                 </div>
             </div>
         </div>
         <div class="row home-logo-group">
-            <div class="col-xs-6 col-md-4 col-md-offset-2">
-                <div id="debate-logo" class="home-logo">
-                    <a href="#!/debate">
-                        <img src="../angular-app/assets/page-assets/cw-pencil-logo-debate.png" />
-                    </a>
+            <div class="col-xs-12 col-md-8 col-md-offset-2">
+                <div id="debate-logo" class="col-xs-6 col-md-6">
+                    <div class="home-logo">
+                        <a href="#!/debate">
+                            <img ng-init="debateLogo='cw-pencil-logo-debate'"
+                                ng-mouseover="debateLogo='cw-pencil-logo-debate-hover'" 
+                                ng-mouseout="debateLogo='cw-pencil-logo-debate'" 
+                                ng-src="../angular-app/assets/page-assets/{{debateLogo}}.png"/>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-6 col-xs-offset-6 col-md-4 col-md-offset-6">
-                <div id="city-logo" class="home-logo">
-                    <a href="#!/city">
-                        <img src="../angular-app/assets/page-assets/cw-pencil-logo-city.png" />
-                    </a>
+                <div id="city-logo" class="col-xs-6 col-xs-offset-6 col-md-6 col-md-offset-6">
+                    <div class="home-logo">
+                        <a href="#!/city">
+                            <img ng-init="cityLogo='cw-pencil-logo-city'"
+                                ng-mouseover="cityLogo='cw-pencil-logo-city-hover'" 
+                                ng-mouseout="cityLogo='cw-pencil-logo-city'" 
+                                ng-src="../angular-app/assets/page-assets/{{cityLogo}}.png"/>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

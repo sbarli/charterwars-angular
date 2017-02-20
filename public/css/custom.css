@@ -64,6 +64,7 @@ html, body, .ng-scope {
 /* ========== */
 /* Cover Page */
 /* ========== */
+
 #cover {
     background: url('../angular-app/assets/background/cover-photo.jpg') no-repeat right top;
     background-size: 100% 100%;
@@ -295,3 +296,64 @@ html, body, .ng-scope {
 }
 
 /* ~~~~~~~~~~~~~~ */
+
+
+/* ========== */
+/* Forum Page */
+/* ========== */
+#forum {
+    background: #EDEDED;
+    padding-bottom: 5%;
+}
+
+.forum-section {
+    margin-bottom: 30px;
+}
+
+.forum-section h2 {
+    background:white;
+    padding:25px;
+}
+
+.forum-block {
+    color:white;
+    height: 200px;
+    border-radius: 10px;
+    margin-top:5%;
+}
+
+.col-md-6 .forum-block h3 {
+    height: 52px;
+}
+
+.forum-title i {
+    vertical-align: text-bottom;
+    color: white;
+}
+
+.forum-carousel {
+    height:100px;
+    background:black;
+    border-radius: 10px;
+}
+
+.carousel-control.right, .carousel-control.left {
+    background-image:linear-gradient(to right,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
+}
+
+.carousel-caption {
+    position:relative;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding-bottom: 0;
+    padding-top: 45px;
+}
+
+.carousel-indicators {
+    display:none;
+}
+
+
+/* ~~~~~~~~~~ */

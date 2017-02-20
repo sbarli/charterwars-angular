@@ -3,53 +3,20 @@ var Page = mongoose.model('Page');
 var Post = mongoose.model('Post');
 
 module.exports.postsGetAll = function(req, res) {
-    var pageId = req.params.pageId;
-    var sectionId = req.params.sectionId;
     
     Page
-        .findById(pageId)
-        .select('sections')
-        .exec(function(pageErr, page){
+        .find()
+        .populate("sections.prompt.responses")
+        .exec(function(err, pages){
             var response = {
                 status : 200,
-                message : []
+                message : {}
             };
-            if(pageErr){
-                console.log('error');
+            if(err){
                 response.status = 500;
-                response.message = pageErr;
-            } else if(!page){
-                console.log('Page not found');
-                response.status = 404;
-                response.message = {
-                    "message" : "Could not find page id: " + pageId
-                };
-            } else if(page.sections.length < 1){
-                console.log('No sections found');
-                response.status = 404;
-                response.message = {
-                    "message" : "No sections found"
-                };
+                response.message = err;
             } else {
-                var section = page.sections.id(sectionId);
-                
-                if(section){
-                    if(section.prompt.responses.length < 1){
-                        console.log('No responses found');
-                        response.status = 404;
-                        response.message = {
-                            "message" : "No responses found"
-                        };
-                    }else{
-                        response.message = section.prompt.responses;
-                    }
-                }else{
-                    console.log('Section not found');
-                    response.status = 404;
-                    response.message = {
-                        "message" : "Could not find section id: " + sectionId
-                    };
-                }
+                response.message = pages;
             }
             res
                 .status(response.status)

@@ -20,8 +20,11 @@ router
     
 router
     .route('/pages/:pageId/sections/:sectionId/responses')
-    .get(ctrlPosts.postsGetAll)
     .post(ctrlPosts.postsPostOne);
+    
+router
+    .route('/posts')
+    .get(ctrlPosts.postsGetAll);
     
     
 // Add Authentication Routes

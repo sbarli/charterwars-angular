@@ -1,13 +1,48 @@
 angular.module('charterwars').factory('pageDataFactory', pageDataFactory);
 
-function pageDataFactory($http){
+function pageDataFactory($http, $q){
     return {
+        getPageAssets:getPageAssets,
         pageList: pageList,
         sectionList: sectionList,
         postResponse: postResponse,
         responseList: responseList,
         getResponse:getResponse
     };
+    
+    function getPageAssets(page){
+        var cityAssets = {
+            name: 'The City',
+            header: 'angular-app/assets/headers/city-header.png',
+            upArrow: 'angular-app/assets/content-nav/city-up-outline.png',
+            downArrow: 'angular-app/assets/content-nav/city-down-outline.png',
+            nextArrow: 'angular-app/assets/content-nav/city-next-arrow.png',
+            prevArrow: 'angular-app/assets/content-nav/city-prev-arrow.png',
+            navId: 'city-vid-'
+        };
+        
+        var debateAssets = {
+            name: 'The Debate',
+            header: 'angular-app/assets/headers/debate-header.png',
+            upArrow: 'angular-app/assets/content-nav/debate-up-outline.png',
+            downArrow: 'angular-app/assets/content-nav/debate-down-outline.png',
+            nextArrow: 'angular-app/assets/content-nav/debate-next-arrow.png',
+            prevArrow: 'angular-app/assets/content-nav/debate-prev-arrow-test.png',
+            navId: 'debate-vid-'
+        };
+        
+        var deferred = $q.defer();
+        
+        if(page === 'city'){
+            deferred.resolve(cityAssets);
+        }else if(page === 'debate'){
+            deferred.resolve(debateAssets);
+        }else{
+            deferred.reject('Failed to find page assets');
+        }
+        
+        return deferred.promise;
+    }
     
     function pageList(){
         return $http.get('/api/pages').then(complete).catch(failed);

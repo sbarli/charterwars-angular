@@ -1,12 +1,13 @@
 angular.module('charterwars').controller('CityController', CityController);
 
-function CityController($location, anchorSmoothScroll, pageDataFactory, $filter, $route, $scope, pageSectionColorService){
+function CityController($location, $timeout, anchorSmoothScroll, pageDataFactory, $filter, $route, $scope, pageSectionColorService){
     $scope.showNavigation(true);
     
     var vm = this;
     
     vm.pageDwnArrow = 'angular-app/assets/content-nav/city-down-outline.png';
     vm.pageUpArrow = 'angular-app/assets/content-nav/city-up-outline.png';
+    vm.nextArrow = 'angular-app/assets/content-nav/city-next-arrow.png';
     
     vm.colors = pageSectionColorService.getIndexColors();
     

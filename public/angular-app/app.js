@@ -32,8 +32,8 @@ function config($routeProvider, $httpProvider){
             activetab: 'home'
         })
         .when('/city', {
-            templateUrl: 'angular-app/components/city/city.html', 
-            controller: CityController,
+            templateUrl: 'angular-app/components/main-content/city.html', 
+            controller: ContentController,
             controllerAs: 'vm',
             access: {
                 restricted: false
@@ -41,8 +41,8 @@ function config($routeProvider, $httpProvider){
             activetab: 'city'
         })
         .when('/debate', {
-            templateUrl: 'angular-app/components/debate/debate.html', 
-            controller: DebateController,
+            templateUrl: 'angular-app/components/main-content/debate.html', 
+            controller: ContentController,
             controllerAs: 'vm',
             access: {
                 restricted: false

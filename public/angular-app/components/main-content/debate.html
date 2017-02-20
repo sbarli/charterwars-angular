@@ -1,29 +1,26 @@
-<div id="city" class="page">
-    <img class="header" src="angular-app/assets/headers/city-header.png"></img>
+<div id="debate" class="page">
+    <img class="header" src="{{ vm.pageAssets.header }}"></img>
     
     <div class="page-text row">
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-4">
-                    <p class="text-left">
-                        <em>Charter school advocates and critics alike are fighting for quality education. But whom are they fighting for?</em>
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4">
-                    <h3 class="text-center">
-                        At its core, the debate is about whom we chose to listen to, and whom we chose to believe.<br>
-                    </h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-md-offset-8">
-                    <p class="text-right">
-                        <em>What does a system of perpetuating inequality look like? Who is unequal? What does that feel like, to be unequal?</em>
-                    </p>
-                </div>
-            </div>
+        <div class="col-md-4">
+            <p class="text-left">
+                <em>So how do we create a public education system that provides equal opportunity? How do we ensure that quality education is a right for all, not a privilege for few? Education reformers believe that the current system <strong>has not, cannot, and never will</strong> achieve that goal. Instead, education reformers look to the private sector for inspiration.<br><br>
+                In a charter-wide model, schools act as independent operators in a free market where families are the consumers, and district bureaucracy gives way to the forces of choice, competition and innovation, building a more efficient and equitable system in its place.</em>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h3 class="text-center">
+                “In all intellectual debates, both sides tend to be correct in what they affirm, and wrong in what they deny.”
+                <br>
+                <em>– John Stuart Mill</em>
+            </h3>
+        </div>
+        <div class="col-md-4">
+            <p class="text-right">
+                <em>But what if that model rests on a faulty assumption? Pro-district advocates argue that economic market forces alone <strong>have not, cannot, and never will,</strong> balance out existing inequity in our public education.<br><br>
+                In more concrete terms, what happens to the families and communities vulnerable to substandard public education in a free market education system? What happens when a school relocates out of a neighborhood? What happens when schools are tasked with providing both quality education and financial profits?<br><br>
+                These ‘what-ifs’ aren’t just fodder for intellectual debate, they underpin the policies governing our nation’s education system.</em>
+            </p>
         </div>
     </div>
     
@@ -31,14 +28,14 @@
         <div class="col-md-12">
             <img class="page-nav-icon" 
                 ng-click="vm.goToVids('first')"
-                ng-src="{{ vm.pageDwnArrow }}" />
+                ng-src="{{ vm.pageAssets.downArrow }}" />
         </div>
     </div>
     
     <div class="page-space"></div>
     
-    <div ng-repeat="section in vm.cityPage.sections track by $index" ng-class="{'section':!$last}">
-        <div id="city-vid-{{ $index }}" class="container-fluid block text-center"
+    <div ng-repeat="section in vm.page.sections track by $index" ng-class="{'section':!$last}">
+        <div id="debate-vid-{{ $index }}" class="container-fluid block text-center"
             ng-style="{'background':section.background}">
             <div class="row block-header">
                 <div class="col-xs-12 text-center">
@@ -90,7 +87,7 @@
             <div class="row" ng-if="!$last">
                 <div class="block-nav text-right col-xs-12">
                     <img class="page-nav-icon block-nav-down" 
-                        ng-src="{{ vm.pageDwnArrow }}"
+                        ng-src="{{ vm.pageAssets.downArrow }}"
                         ng-click="vm.goToVids($index)">
                     </img>
                 </div>
@@ -98,9 +95,20 @@
             <div class="row" ng-if="$last">
                 <div class="block-nav text-right col-xs-12">
                     <img class="page-nav-icon block-nav-up" 
-                        ng-src="{{ vm.pageUpArrow }}"
-                        ng-click="vm.backToTop('city')">
+                        ng-src="{{ vm.pageAssets.upArrow }}"
+                        ng-click="vm.backToTop('debate')">
                     </img>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" ng-if="$last">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <a href="#!/city">
+                        <img class="page-nav-icon"
+                            ng-src="{{ vm.pageAssets.prevArrow }}">
+                        </img>
+                    </a>
                 </div>
             </div>
         </div>

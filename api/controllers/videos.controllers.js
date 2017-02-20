@@ -26,6 +26,32 @@ module.exports.videosGetAll = function(req, res) {
 
 };
 
+module.exports.videosGetOne = function(req, res) {
+    
+    var videoId = req.params.videoId;
+    console.log('GET videoId', videoId);
+    
+    Video
+        .findById(videoId)
+        .exec(function(err, video){
+            var response = {
+                status : 200,
+                message : video
+            };
+            if(err){
+                response.status = 500;
+                response.message = err;
+            } else if(!video){
+                response.status = 404;
+                response.message = "Video ID not found";
+            }
+            res
+                .status(response.status)
+                .json(response.message);
+        });
+
+};
+
 var _addVideo = function(req, res, page, section){
     var newVideo = {
         url: req.body.url

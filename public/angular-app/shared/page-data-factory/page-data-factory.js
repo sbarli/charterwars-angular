@@ -7,7 +7,8 @@ function pageDataFactory($http, $q){
         sectionList: sectionList,
         postResponse: postResponse,
         responseList: responseList,
-        getResponse:getResponse
+        getResponse:getResponse,
+        getVideo:getVideo
     };
     
     function getPageAssets(page){
@@ -63,6 +64,11 @@ function pageDataFactory($http, $q){
     function getResponse(postId){
         console.log('post id: ' + postId);
         return $http.get('/api/posts/' + postId).then(complete).catch(failed);
+    }
+    
+    function getVideo(videoId){
+        console.log('video id: ' + videoId);
+        return $http.get('/api/videos/' + videoId).then(complete).catch(failed);
     }
     
     function complete(response){

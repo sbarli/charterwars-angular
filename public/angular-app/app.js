@@ -58,6 +58,15 @@ function config($routeProvider, $httpProvider){
             },
             activetab: 'forum'
         })
+        .when('/video', {
+            templateUrl: 'angular-app/components/videos/videos.html', 
+            controller: VideosController,
+            controllerAs: 'vm',
+            access: {
+                restricted: false
+            },
+            activetab: 'forum'
+        })
         .when('/credits', {
             templateUrl: 'angular-app/components/credits/credits.html', 
             access: {

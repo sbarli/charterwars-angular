@@ -32,6 +32,10 @@ router
     .get(ctrlVideos.videosGetAll);
     
 router
+    .route('/videos/:videoId')
+    .get(ctrlVideos.videosGetOne);
+    
+router
     .route('/pages/:pageId/sections/:sectionId/video')
     .post(ctrlVideos.videosPostOne);
     

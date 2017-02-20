@@ -47,25 +47,25 @@
         </div>
         <div class="row home-logo-group">
             <div class="col-xs-12 col-md-8 col-md-offset-2">
-                <div id="debate-logo" class="col-xs-6 col-md-6">
-                    <div class="home-logo">
-                        <a href="#!/debate">
-                            <img ng-init="debateLogo='cw-pencil-logo-debate'"
-                                ng-mouseover="debateLogo='cw-pencil-logo-debate-hover'" 
-                                ng-mouseout="debateLogo='cw-pencil-logo-debate'" 
-                                ng-src="../angular-app/assets/page-assets/{{debateLogo}}.png"/>
-                        </a>
-                    </div>
+                <div id="city-logo" class="col-xs-6 col-md-6">
+                    <a href="#!/city">
+                        <div class="home-logo"
+                            ng-init="cityLogo='city-icon'"
+                            ng-mouseover="cityLogo='city-icon-hover'" 
+                            ng-mouseout="cityLogo='city-icon'">
+                            <img ng-src="../angular-app/assets/page-assets/{{cityLogo}}.png"/>
+                        </div>
+                    </a>
                 </div>
-                <div id="city-logo" class="col-xs-6 col-xs-offset-6 col-md-6 col-md-offset-6">
-                    <div class="home-logo">
-                        <a href="#!/city">
-                            <img ng-init="cityLogo='cw-pencil-logo-city'"
-                                ng-mouseover="cityLogo='cw-pencil-logo-city-hover'" 
-                                ng-mouseout="cityLogo='cw-pencil-logo-city'" 
-                                ng-src="../angular-app/assets/page-assets/{{cityLogo}}.png"/>
-                        </a>
-                    </div>
+                <div id="debate-logo" class="col-xs-6 col-md-6">
+                    <a href="#!/debate">
+                        <div class="home-logo"
+                            ng-init="debateLogo='debate-icon'"
+                            ng-mouseover="debateLogo='debate-icon-hover'" 
+                            ng-mouseout="debateLogo='debate-icon'">
+                            <img ng-src="../angular-app/assets/page-assets/{{debateLogo}}.png"/>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

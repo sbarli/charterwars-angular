@@ -1,10 +1,10 @@
 angular.module('charterwars').controller('IntroController', IntroController);
 
 function IntroController($location, $scope){
-    $scope.showNavigation(false);
     var vm = this;
     
     if($location.$$url === '/intro'){
+        $scope.showNavigation(false);
         vm.showContBtn = true;
     }else if ($location.$$url === '/home'){
         vm.showCloseBtn = true;

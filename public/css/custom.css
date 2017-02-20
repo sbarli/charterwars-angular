@@ -29,6 +29,21 @@ html, body, .ng-scope {
     background-color: #e6e6e6;
     border-color: #adadad;
 }
+
+.logo {
+    background:#ffffff;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.logo:hover {
+    box-shadow: inset 0 0 30px darkgrey;
+    border: 1px solid darkgray;
+}
+
+.logo img, .cover-logo img {
+    width:100%;
+}
 /* ~~~~~~~~~ */
 
 
@@ -75,7 +90,7 @@ html, body, .ng-scope {
 #cover .jumbotron {
     color: white;
     background:transparent;
-    margin-top:10%;
+    margin-top:5%;
 }
 
 
@@ -174,9 +189,9 @@ html, body, .ng-scope {
     border-radius: 6px;
 }
 
-#dir-note {
-    font-family: 'Courier New';
-}
+/*#dir-note {*/
+/*    font-family: 'Courier New';*/
+/*}*/
 
 #dir-note.closed {
     height: 200px;
@@ -185,21 +200,6 @@ html, body, .ng-scope {
 
 #dir-note.open {
     height:100%;
-}
-
-.home-logo {
-    background:#ffffff;
-    border-radius: 20px;
-    padding: 20px;
-}
-
-.home-logo:hover {
-    box-shadow: inset 0 0 30px darkgrey;
-    border: 1px solid darkgray;
-}
-
-#city-logo img, #debate-logo img {
-    width: 100%;
 }
 
 #debate-logo {

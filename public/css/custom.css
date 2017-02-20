@@ -317,13 +317,13 @@ html, body, .ng-scope {
 
 .forum-block {
     color:white;
-    height: 200px;
+    min-height: 200px;
     border-radius: 10px;
     margin-top:5%;
 }
 
 .col-md-6 .forum-block h3 {
-    height: 52px;
+    min-height: 52px;
 }
 
 .forum-title i {

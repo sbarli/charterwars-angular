@@ -5,9 +5,9 @@ var sectionSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    url: {
-        type: String,
-        required: true
+    video: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Video"
     },
     prompt: {
         question: {

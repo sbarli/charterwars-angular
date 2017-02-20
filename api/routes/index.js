@@ -2,6 +2,7 @@ var express     = require("express"),
     router      = express.Router(),
     ctrlPages   = require("../controllers/pages.controllers.js"),
     ctrlPosts  = require("../controllers/posts.controllers.js"),
+    ctrlVideos  = require("../controllers/videos.controllers.js"),
     ctrlUsers   = require("../controllers/users.controllers.js");
     
 router
@@ -19,12 +20,20 @@ router
     .post(ctrlPages.sectionsAddOne);
     
 router
+    .route('/posts')
+    .get(ctrlPosts.postsGetAll);
+    
+router
     .route('/pages/:pageId/sections/:sectionId/responses')
     .post(ctrlPosts.postsPostOne);
     
 router
-    .route('/posts')
-    .get(ctrlPosts.postsGetAll);
+    .route('/videos')
+    .get(ctrlVideos.videosGetAll);
+    
+router
+    .route('/pages/:pageId/sections/:sectionId/video')
+    .post(ctrlVideos.videosPostOne);
     
     
 // Add Authentication Routes

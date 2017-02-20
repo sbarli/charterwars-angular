@@ -5,6 +5,7 @@ module.exports.pagesGetAll = function(req, res) {
     
     Page
         .find()
+        .populate("sections.video")
         .exec(function(err, pages){
             var response = {
                 status : 200,

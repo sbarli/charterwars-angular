@@ -4,8 +4,9 @@ function pageDataFactory($http){
     return {
         pageList: pageList,
         sectionList: sectionList,
+        postResponse: postResponse,
         responseList: responseList,
-        postResponse: postResponse
+        getResponse:getResponse
     };
     
     function pageList(){
@@ -16,12 +17,17 @@ function pageDataFactory($http){
         return $http.get('/api/pages/' + id + '/sections').then(complete).catch(failed);
     }
     
-    function responseList(pageId, sectionId){
-        return $http.get('/api/pages/' + pageId + '/sections/' + sectionId + '/responses').then(complete).catch(failed);
-    }
-    
     function postResponse(pageId, sectionId, responseData){
         return $http.post('/api/pages/' + pageId + '/sections/' + sectionId + '/responses', responseData).then(complete).catch(failed);
+    }
+    
+    function responseList(){
+        return $http.get('/api/posts').then(complete).catch(failed);
+    }
+    
+    function getResponse(postId){
+        console.log('post id: ' + postId);
+        return $http.get('/api/posts/' + postId).then(complete).catch(failed);
     }
     
     function complete(response){

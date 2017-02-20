@@ -8,11 +8,26 @@
     </div>
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-            <li class="active" data-toggle="collapse" data-target=".navbar-collapse.in"><a href="#!/home">Home</a></li>
-            <li data-toggle="collapse" data-target=".navbar-collapse.in"><a href="#!/debate">The Debate</a></li>
-            <li data-toggle="collapse" data-target=".navbar-collapse.in"><a href="#!/city">The City</a></li>
-            <li data-toggle="collapse" data-target=".navbar-collapse.in"><a href="#!/forum">The Discussion</a></li>
-            <li data-toggle="collapse" data-target=".navbar-collapse.in"><a href="#!/credits">Credits</a></li>
+            <li data-toggle="collapse" data-target=".navbar-collapse.in"
+                ng-class="{'active':isActive('home')}">
+                <a href="#!/home">Home</a>
+            </li>
+            <li data-toggle="collapse" data-target=".navbar-collapse.in"
+                ng-class="{'active':isActive('debate')}">
+                <a href="#!/debate">The Debate</a>
+            </li>
+            <li data-toggle="collapse" data-target=".navbar-collapse.in"
+                ng-class="{'active':isActive('city')}">
+                <a href="#!/city">The City</a>
+            </li>
+            <li data-toggle="collapse" data-target=".navbar-collapse.in"
+                ng-class="{'active':isActive('forum')}">
+                <a href="#!/forum">The Discussion</a>
+            </li>
+            <li data-toggle="collapse" data-target=".navbar-collapse.in"
+                ng-class="{'active':isActive('credits')}">
+                <a href="#!/credits">Credits</a>
+            </li>
         </ul>
     </div>
 </nav>

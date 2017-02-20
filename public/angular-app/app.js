@@ -10,7 +10,8 @@ function config($routeProvider, $httpProvider){
             controllerAs: 'vm',
             access: {
                 restricted: false
-            }
+            },
+            activetab: 'cover'
         })
         .when('/intro', {
             templateUrl: 'angular-app/components/intro/intro.html', 
@@ -18,7 +19,8 @@ function config($routeProvider, $httpProvider){
             controllerAs: 'vm',
             access: {
                 restricted: false
-            }
+            },
+            activetab: 'intro'
         })
         .when('/home', {
             templateUrl: 'angular-app/components/home/home.html',
@@ -26,7 +28,8 @@ function config($routeProvider, $httpProvider){
             controllerAs: 'vm',
             access: {
                 restricted: false
-            }
+            },
+            activetab: 'home'
         })
         .when('/city', {
             templateUrl: 'angular-app/components/city/city.html', 
@@ -34,7 +37,8 @@ function config($routeProvider, $httpProvider){
             controllerAs: 'vm',
             access: {
                 restricted: false
-            }
+            },
+            activetab: 'city'
         })
         .when('/debate', {
             templateUrl: 'angular-app/components/debate/debate.html', 
@@ -42,7 +46,8 @@ function config($routeProvider, $httpProvider){
             controllerAs: 'vm',
             access: {
                 restricted: false
-            }
+            },
+            activetab: 'debate'
         })
         .when('/forum', {
             templateUrl: 'angular-app/components/forum/forum.html', 
@@ -50,13 +55,15 @@ function config($routeProvider, $httpProvider){
             controllerAs: 'vm',
             access: {
                 restricted: false
-            }
+            },
+            activetab: 'forum'
         })
         .when('/credits', {
             templateUrl: 'angular-app/components/credits/credits.html', 
             access: {
                 restricted: false
-            }
+            },
+            activetab: 'credits'
         })
         .when('/register', {
             templateUrl: 'angular-app/components/register/register.html',
@@ -64,13 +71,15 @@ function config($routeProvider, $httpProvider){
             // controllerAs: 'vm',
             access: {
                 restricted: false
-            }
+            },
+            activetab: 'register'
         })
         .when('/profile', {
             templateUrl: 'angular-app/components/profile/profile.html',
             access: {
                 restricted: true
-            }
+            },
+            activetab: 'profile'
         })
         .otherwise({
             redirectTo: '/home'

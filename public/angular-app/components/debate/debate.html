@@ -1,26 +1,35 @@
 <div id="debate" class="page">
     <img class="header" src="angular-app/assets/headers/debate-header.png"></img>
     
-    <div class="page-text col-xs-12">
-        <p class="text-left">
-            <em>The charter school movement, at its core, is motivated by the<br>
-            pursuit of civil rights. Charter school advocates consider<br>
-            education reform as the next battle of a fight woven through<br>
-            the fabric of our nation’s past, present, and future.</em>
-        </p>
-        <h3 class="text-center">
-            “The school system perpetuates existing inequality”
-            <br>
-            <em>– Jon Cetel, Pro-Charter Activist</em>
-        </h3>
-        <p class="text-right">
-            <em>But what does a system of perpetuating inequality look like?<br>
-            Who is unequal? What does that feel like, to be unequal?</em>
-        </p>
+    <div class="page-text row">
+        <div class="col-md-4">
+            <p class="text-left">
+                <em>So how do we create a public education system that provides equal opportunity? How do we ensure that quality education is a right for all, not a privilege for few? Education reformers believe that the current system <strong>has not, cannot, and never will</strong> achieve that goal. Instead, education reformers look to the private sector for inspiration. <br>
+                In a charter-wide model, schools act as independent operators in a free market where families are the consumers, and district bureaucracy gives way to the forces of choice, competition and innovation, building a more efficient and equitable system in its place.</em>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h3 class="text-center">
+                “The real debate isn’t between charter or district, but rather a debate over whom we chose to listen to, and what we chose to believe.”
+                <br>
+                <em>– Jon Cetel, Pro-Charter Activist</em>
+            </h3>
+        </div>
+        <div class="col-md-4">
+            <p class="text-right">
+                <em>But what if that model rests on a faulty assumption? Pro-district advocates argue that economic market forces alone have not, cannot, and never will balance out existing inequity in our public education.<br>
+                In more concrete terms, what happens to the families and communities vulnerable to substandard public education? What happens when a school relocates out of a neighborhood? What happens when schools pursue both quality education and financial profits?<br>
+                These ‘what-ifs’ aren’t just fodder for intellectual debate, they underpin the policies governing the education of 50 million children in America.</em>
+            </p>
+        </div>
     </div>
     
-    <div class="page-nav text-right col-xs-12">
-        <div ng-click="vm.goToVids('first')"><img class="page-nav-icon" ng-src="{{ vm.pageDwnArrow }}"></img></div>
+    <div class="page-nav text-right row">
+        <div class="col-md-12">
+            <img class="page-nav-icon" 
+                ng-click="vm.goToVids('first')"
+                ng-src="{{ vm.pageDwnArrow }}" />
+        </div>
     </div>
     
     <div class="page-space"></div>

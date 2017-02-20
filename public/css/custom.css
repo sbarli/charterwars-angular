@@ -42,7 +42,7 @@ html, body, .ng-scope {
     
     .page-space {
         height: 2000px;
-        margin-top:305px;
+        margin-top:-50px;
         background:#ededed;
     }
 }
@@ -54,7 +54,7 @@ html, body, .ng-scope {
     
     .page-space {
         height: 1000px;
-        margin-top:305px;
+        margin-top:-50px;
         background:#ededed;
     }
 }

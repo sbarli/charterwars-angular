@@ -243,6 +243,7 @@ html, body, .ng-scope {
 
 .page-nav-icon {
     max-height:100px;
+    cursor: pointer;
 }
 
 .section {

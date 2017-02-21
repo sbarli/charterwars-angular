@@ -6,6 +6,7 @@ module.exports.postsGetAll = function(req, res) {
     
     Page
         .find()
+        .populate("sections.video")
         .populate("sections.prompt.responses")
         .exec(function(err, pages){
             var response = {

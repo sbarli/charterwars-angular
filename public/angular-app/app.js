@@ -65,7 +65,7 @@ function config($routeProvider, $httpProvider){
             access: {
                 restricted: false
             },
-            activetab: 'forum'
+            activetab: 'video'
         })
         .when('/credits', {
             templateUrl: 'angular-app/components/credits/credits.html', 

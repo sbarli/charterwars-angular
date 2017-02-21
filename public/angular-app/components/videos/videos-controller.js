@@ -6,13 +6,14 @@ function VideosController($scope, $location, $route, $timeout, pageDataFactory){
     $timeout(function(){
         if($route.current.params.id){
             var videoId = $route.current.params.id;
-            getVideo(videoId);
+            getVid(videoId);
         } else {
             vm.noVideo = true;
         }
     }, 100);
     
-    function getVideo(videoId){
+    
+    function getVid(videoId){
         pageDataFactory.getVideo(videoId).then(function(resp){
             vm.video = resp.data;
         }).catch(function(err){

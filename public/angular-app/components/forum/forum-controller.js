@@ -18,3 +18,7 @@ function ForumController($scope, $q, pageDataFactory, pageSectionColorService){
         });
     });
 }
+
+// angular.module('charterwars').config(['$qProvider', function ($qProvider) {
+//     $qProvider.errorOnUnhandledRejections(false);
+// }]);

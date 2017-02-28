@@ -304,6 +304,15 @@ html, body, .ng-scope {
     margin-top:-45px;
 }
 
+.page-nav-nxt-prev {
+    margin-top: 25px;
+    max-height: 100px;
+}
+
+.page-nav-nxt-prev a {
+    margin: auto 5%;
+}
+
 /* ~~~~~~~~~~~~~~ */
 
 

@@ -101,7 +101,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid" ng-if="$last">
+        <div class="container-fluid page-nav-nxt-prev" ng-if="$last">
             <div class="row">
                 <div class="col-md-12 text-center">
                     <a href="#!/city">
@@ -109,13 +109,13 @@
                             ng-src="{{ vm.pageAssets.prevArrow }}">
                         </img>
                     </a>
+                    <a href="#!/forum">
+                        <img class="page-nav-icon"
+                            ng-src="{{ vm.pageAssets.nextArrow }}">
+                        </img>
+                    </a>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="container text-center">
-        <p>Content Goes Here</p>
-        <a href="#!/home" class="btn btn-primary">Go Home</a>
     </div>
 </div>

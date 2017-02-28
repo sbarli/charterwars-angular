@@ -354,6 +354,10 @@ html, body, .ng-scope {
     color: white;
 }
 
+.forum-title i:hover {
+    color:lightgray;
+}
+
 .forum-carousel {
     height:200px;
     background:black;

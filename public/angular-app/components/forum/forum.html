@@ -8,7 +8,11 @@
         
         <div ng-repeat="page in vm.pages | orderBy:'name' track by $index">
             <div class="row forum-section">
-                <h2 class="text-center">{{ page.name }} Discussion</h2>
+                <div class="col-md-12">
+                    <div class="forum-sec-header">
+                        <h2 class="text-center">{{ page.name }} Discussion</h2>
+                    </div>
+                </div>
                 <div class="col-md-12">
                     <div ng-repeat="sec in page.sections track by $index">
                         <div class="col-md-6">

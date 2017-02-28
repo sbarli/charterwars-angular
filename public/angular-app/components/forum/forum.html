@@ -6,7 +6,7 @@
             </div>
         </div>
         
-        <div ng-repeat="page in vm.pages track by $index">
+        <div ng-repeat="page in vm.pages | orderBy:'name' track by $index">
             <div class="row forum-section">
                 <h2 class="text-center">{{ page.name }} Discussion</h2>
                 <div class="col-md-12">
@@ -25,11 +25,46 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div uib-carousel class="forum-carousel" active="active" interval=5000 no-wrap=false>
+                                        <div uib-carousel class="forum-carousel" active="active" interval=50000 no-wrap=false>
                                             <div uib-slide ng-repeat="response in sec.prompt.responses" index="$index">
                                                 <div class="carousel-caption">
                                                     <p class="forum-response">{{response.answer}}</p>
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="forum-response">
+                                    <div ng-if="!sec.responded">
+                                        <div class="row">
+                                            <div class="col-md-10 col-md-offset-1">
+                                                <div ng-if="sec.error" class="alert alert-danger" role="alert">
+                                                    <p>{{ sec.error }}</p>
+                                                </div>
+                                                <div ng-if="sec.success" class="alert alert-success" role="alert">
+                                                    <p>{{ sec.success }}</p>
+                                                </div>
+                                                <div ng-if="!sec.success">
+                                                    <p class="forum-response-header text-center">What do you think?</p>
+                                                    <form name="post" ng-submit="vm.post(page,sec)">
+                                                        <div class="form-group">
+                                                            <textarea type="answer" class="form-control" id="answer" placeholder="[Response]" ng-model="sec.answer" autocapitalize="none" required="true" maxlength="150" rows="2"/>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="name" class="form-control" id="name" placeholder="[Name]" ng-model="vm.name" autocapitalize="none" />
+                                                        </div>
+                                                        <div class="question-btn text-right">
+                                                            <button type="submit" class="btn btn-sm btn-secondary">Submit</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" ng-if="sec.responded">
+                                        <div class="col-md-8 col-md-offset-2 text-center block-responded">
+                                            <div class="responded-msg">
+                                                <p>Your response has been saved!</p>
                                             </div>
                                         </div>
                                     </div>

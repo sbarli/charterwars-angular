@@ -17,6 +17,30 @@ function ForumController($scope, $q, pageDataFactory, pageSectionColorService){
             });
         });
     });
+    
+    vm.post = function(page,sec){
+        var pageId = page._id;
+        var sectionId = sec._id;
+        var responseData = {
+            name: vm.name,
+            answer: sec.answer
+        };
+        
+        console.log('responseData', responseData);
+        
+        if(!sec.answer){
+            sec.error = 'Please add an answer!';
+        }else{
+            pageDataFactory.postResponse(pageId, sectionId, responseData).then(function(response){
+                console.log(response.status);
+                if(response.status === 201){
+                    sec.responded = true;
+                }
+            }).catch(function(err){
+                console.log(err);
+            });
+        }
+    };
 }
 
 // angular.module('charterwars').config(['$qProvider', function ($qProvider) {

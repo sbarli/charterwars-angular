@@ -5,7 +5,34 @@
                 <h1>{{ vm.title }}</h1>
             </div>
         </div>
-        
+        <div class="row">
+            <div class="col-xs-12 col-md-8 col-md-offset-2">
+                <div class="main-white disc-text">
+                    <div id="disc-note"
+                        ng-class="{'closed':!vm.discText, 'open':vm.discText}">
+                        <h3 class="text-center">A note on the discussion:</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, adipiscing suspendisse. Elit a at. Integer laoreet in, aenean sem non. Pellentesque ipsum, pellentesque ut eros. Parturient leo nunc, aliquet justo arcu, nec mauris diam. Vehicula taciti proin, nascetur laborum, vulputate viverra.
+                        </p>
+                        <p>
+                            A tellus. Sit nec eleifend, eu eu. Libero posuere eget. Odio bibendum at. Nisl nullam vestibulum. Massa phasellus per.
+                        </p>
+                        <p>
+                            Proin blandit luctus. Neque cras commodo, magna scelerisque. Semper ullamcorper tristique, interdum quam. Dolor nulla turpis. Integer dis aenean, etiam amet est, donec orci. Id elit, proin arcu parturient, nunc mauris enim.
+                        </p>
+                        <p>
+                            Mauris blandit. Porttitor maecenas justo. A nullam, pellentesque non nibh. Est imperdiet, ipsum suscipit ante, condimentum vel vel. Id phasellus, integer ut cras, dictum elit.
+                        </p>
+                    </div>
+                </div>
+                <div id="expand-disc-text" class="text-right">
+                    <i class="fa fa-2x clickable"
+                        ng-class="{'fa-plus-square':!vm.discText,'fa-minus-square':vm.discText}"
+                        ng-click="vm.discText=!vm.discText">
+                    </i>
+                </div>
+            </div>
+        </div>
         <div ng-repeat="page in vm.pages | orderBy:'name' track by $index">
             <div class="row forum-section">
                 <div class="col-md-12">

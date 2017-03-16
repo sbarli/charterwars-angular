@@ -1,7 +1,7 @@
-angular.module('charterwars', ['ngRoute', 'angular-jwt', 'ui.bootstrap']).config(config); //.run(run)
+angular.module('charterwars', ['ngRoute', 'angular-jwt', 'ui.bootstrap']).config(config).run(run);
     
 function config($routeProvider, $httpProvider){
-    // $httpProvider.interceptors.push('AuthInterceptor');
+    $httpProvider.interceptors.push('AuthInterceptor');
     
     $routeProvider
         .when('/', {
@@ -74,33 +74,26 @@ function config($routeProvider, $httpProvider){
             },
             activetab: 'credits'
         })
-        .when('/register', {
-            templateUrl: 'angular-app/components/register/register.html',
-            // controller: RegisterController,
-            // controllerAs: 'vm',
+        .when('/login', {
+            templateUrl: 'angular-app/components/login/login.html',
+            controller: LoginController,
+            controllerAs: 'vm',
             access: {
                 restricted: false
             },
             activetab: 'register'
         })
-        .when('/profile', {
-            templateUrl: 'angular-app/components/profile/profile.html',
-            access: {
-                restricted: true
-            },
-            activetab: 'profile'
-        })
         .otherwise({
-            redirectTo: '/home'
+            redirectTo: '/'
         });
 }
 
-// function run($rootScope, $location, $window, AuthFactory){
-//     $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute){
-//         if(nextRoute.access !== undefined && nextRoute.access.restricted && !$window.sessionStorage.token && !AuthFactory.isLoggedIn){
-//             console.log('prevent path');
-//             event.preventDefault();
-//             $location.path('/');
-//         }
-//     });
-// }
+function run($rootScope, $location, $window, AuthFactory){
+    $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute){
+        if(nextRoute.access !== undefined && nextRoute.access.restricted && !$window.sessionStorage.token && !AuthFactory.isLoggedIn){
+            console.log('prevent path');
+            event.preventDefault();
+            $location.path('/login');
+        }
+    });
+}

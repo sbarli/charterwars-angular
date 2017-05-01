@@ -1,4 +1,4 @@
-angular.module('charterwars', ['ngRoute', 'angular-jwt', 'ui.bootstrap']).config(config).run(run);
+angular.module('charterwars', ['ngRoute', 'angular-jwt', 'ui.bootstrap']).config(config); //.run(run)
     
 function config($routeProvider, $httpProvider){
     $httpProvider.interceptors.push('AuthInterceptor');
@@ -88,12 +88,12 @@ function config($routeProvider, $httpProvider){
         });
 }
 
-function run($rootScope, $location, $window, AuthFactory){
-    $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute){
-        if(nextRoute.access !== undefined && nextRoute.access.restricted && !$window.sessionStorage.token && !AuthFactory.isLoggedIn){
-            console.log('prevent path');
-            event.preventDefault();
-            $location.path('/login');
-        }
-    });
-}
+// function run($rootScope, $location, $window, AuthFactory){
+//     $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute){
+//         if(nextRoute.access !== undefined && nextRoute.access.restricted && !$window.sessionStorage.token && !AuthFactory.isLoggedIn){
+//             console.log('prevent path');
+//             event.preventDefault();
+//             $location.path('/login');
+//         }
+//     });
+// }

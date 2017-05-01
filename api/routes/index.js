@@ -7,7 +7,7 @@ var express     = require("express"),
     
 router
     .route('/pages')
-    .get(ctrlUsers.authenticate, ctrlPages.pagesGetAll)
+    .get(ctrlPages.pagesGetAll) //ctrlUsers.authenticate, 
     .post(ctrlPages.pagesPostOne);
     
 router

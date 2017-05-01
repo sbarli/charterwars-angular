@@ -48,6 +48,11 @@ html, body, .ng-scope {
 .clickable {
     cursor: pointer;
 }
+
+.inline {
+    display: inline-block;
+    margin-right: 5px;
+}
 /* ~~~~~~~~~ */
 
 
@@ -304,16 +309,12 @@ html, body, .ng-scope {
 }
 
 .block-nav {
-    margin-bottom: -50px;
+    margin-bottom: -41px;
 }
 
-.block-nav-down {
-    max-height:100px;
-}
-
-.block-nav-up {
-    max-height:100px;
-    margin-top:-45px;
+.nav-icon-container {
+    max-height: 100px;
+    width: 71px;
 }
 
 .page-nav-nxt-prev {

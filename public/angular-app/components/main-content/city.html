@@ -87,20 +87,22 @@
                     </div>
                 </div>
             </div>    
-            <div class="row" ng-if="!$last">
+            <div class="row">
                 <div class="block-nav text-right col-xs-12">
-                    <img class="page-nav-icon block-nav-down" 
-                        ng-src="{{ vm.pageAssets.downArrow }}"
-                        ng-click="vm.goToVids($index)">
-                    </img>
-                </div>
-            </div>   
-            <div class="row" ng-if="$last">
-                <div class="block-nav text-right col-xs-12">
-                    <img class="page-nav-icon block-nav-up" 
-                        ng-src="{{ vm.pageAssets.upArrow }}"
-                        ng-click="vm.backToTop('city')">
-                    </img>
+                    <div class="nav-icon-container inline"
+                        ng-if="!$last">
+                        <img class="page-nav-icon" 
+                            ng-src="{{ vm.pageAssets.downArrow }}"
+                            ng-click="vm.goToVids($index)">
+                        </img>
+                    </div>
+                    <div class="nav-icon-container inline"
+                        ng-if="!$first">
+                        <img class="page-nav-icon" 
+                            ng-src="{{ vm.pageAssets.upArrow }}"
+                            ng-click="vm.prevVid($index)">
+                        </img>
+                    </div>
                 </div>
             </div>
         </div>

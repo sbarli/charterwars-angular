@@ -38,6 +38,12 @@ function ContentController($scope, $location, $timeout, $filter, $route, anchorS
         anchorSmoothScroll.scrollTo(eID);
     };
     
+    vm.prevVid = function (index){
+        var prev_idx = index - 1;
+        var eID = vm.pageAssets.navId + prev_idx;
+        anchorSmoothScroll.scrollTo(eID);
+    };
+    
     vm.backToTop = function (eID){
         anchorSmoothScroll.scrollTo(eID);
     };

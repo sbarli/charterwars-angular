@@ -28,7 +28,7 @@ function pageDataFactory($http, $q){
             upArrow: 'angular-app/assets/content-nav/debate-up-outline.png',
             downArrow: 'angular-app/assets/content-nav/debate-down-outline.png',
             nextArrow: 'angular-app/assets/content-nav/debate-next-arrow.png',
-            prevArrow: 'angular-app/assets/content-nav/debate-prev-arrow-test.png',
+            prevArrow: 'angular-app/assets/content-nav/debate-prev-arrow.png',
             navId: 'debate-vid-'
         };
         

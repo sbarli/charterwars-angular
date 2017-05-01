@@ -51,48 +51,6 @@ html, body, .ng-scope {
 /* ~~~~~~~~~ */
 
 
-/* ========== */
-/* Note Boxes */
-/* ========== */
-
-.home-text, .disc-text {
-    margin: 5% auto;
-}
-
-.home-text:hover {
-    box-shadow: inset 0 0 30px darkgrey;
-    border: 1px solid darkgray;
-}
-
-#expand-home-text {
-    margin: -7% 2% 30px 0;
-}
-
-#expand-disc-text {
-    margin: -7% 2% 0 0;
-}
-
-#expand-home-text i, #expand-disc-text i {
-    background: white;
-    height: 26px;
-    border-radius: 6px;
-}
-
-#dir-note.closed {
-    height: 200px;
-    overflow: hidden;
-}
-
-#disc-note.closed {
-    height: 100px;
-    overflow: hidden;
-}
-
-#dir-note.open, #disc-note.open {
-    height:100%;
-}
-
-
 /* ================= */
 /* Mobile-Responsive */
 /* ================= */
@@ -212,6 +170,39 @@ html, body, .ng-scope {
 
 .home-logo-group {
     margin-bottom: 5%;
+}
+
+.home-text {
+    margin: 5% auto;
+    
+}
+
+.home-text:hover {
+    box-shadow: inset 0 0 30px darkgrey;
+    border: 1px solid darkgray;
+}
+
+#expand-home-text {
+    margin: -7% 2% 30px 0;
+}
+
+#expand-home-text i {
+    background: white;
+    height: 26px;
+    border-radius: 6px;
+}
+
+/*#dir-note {*/
+/*    font-family: 'Courier New';*/
+/*}*/
+
+#dir-note.closed {
+    height: 200px;
+    overflow: hidden;
+}
+
+#dir-note.open {
+    height:100%;
 }
 
 #debate-logo {
